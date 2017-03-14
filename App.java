@@ -14,7 +14,7 @@ public class App {
     allCds.add(cdOne);
     allCds.add(cdTwo);
     allCds.add(cdThree);
-    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist");
+    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist, Add a CD");
     String userInput = console.readLine();
 
     boolean promgramRunning = true;
@@ -63,6 +63,23 @@ public class App {
             System.out.println(individualCd.mPrice);
           }
         }
+      } else if (userInput.equals("Add a CD")) {
+        System.out.println("Let's add a CD! What is the artist's name?");
+        String userArtistName = console.readLine();
+        System.out.println("I like that artist, which album is it?");
+        String userAlbumName = console.readLine();
+        System.out.println("Great album. When was it released?");
+        int userRelease = Integer.parseInt(console.readLine());
+        System.out.println("I love that year, how much does this cd cost?");
+        int userPrice = Integer.parseInt(console.readLine());
+        Cd userCd = new Cd(userArtistName, userAlbumName, userRelease, userPrice);
+        allCds.add(userCd);
+        System.out.println("Here is your CD");
+          System.out.println("-------------------");
+          System.out.println(userCd.mName);
+          System.out.println(userCd.mAlbumName);
+          System.out.println(userCd.mRelease);
+          System.out.println(userCd.mPrice);
       }
     }
   }
