@@ -14,4 +14,8 @@ class Cd {
   public boolean releaseYear(int year) {
     return (year > mRelease);
   }
+
+  public boolean priceRange(int price) {
+    return (price > mPrice);
+  }
 }

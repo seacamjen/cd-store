@@ -14,7 +14,7 @@ public class App {
     allCds.add(cdOne);
     allCds.add(cdTwo);
     allCds.add(cdThree);
-    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date");
+    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price");
     String userInput = console.readLine();
 
     boolean promgramRunning = true;
@@ -39,7 +39,19 @@ public class App {
               System.out.println(individualCd.mPrice);
             }
           }
-      } else if
+      } else if (userInput.equals("Search by price")) {
+        System.out.println("Enter amount to search for albums under that amount.");
+        int userPrice = Integer.parseInt(console.readLine());
+        for (Cd individualCd : allCds) {
+          if (individualCd.priceRange(userPrice)) {
+            System.out.println("-------------------");
+            System.out.println(individualCd.mName);
+            System.out.println(individualCd.mAlbumName);
+            System.out.println(individualCd.mRelease);
+            System.out.println(individualCd.mPrice);
+          }
+        }
+      }
     }
   }
 }
