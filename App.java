@@ -14,11 +14,15 @@ public class App {
     allCds.add(cdOne);
     allCds.add(cdTwo);
     allCds.add(cdThree);
-    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist, Add a CD, Enter coupon, Exit");
-    String userInput = console.readLine();
 
     boolean promgramRunning = true;
+
     while(promgramRunning){
+
+      System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist, Add a CD, Enter coupon, Exit");
+      String userInput = console.readLine();
+
+
       if (userInput.equals("See all Cds")) {
         for (Cd individualCd : allCds) {
           System.out.println("-------------------");
@@ -113,7 +117,11 @@ public class App {
                 System.out.println("Discounted Price: " + individualCd.discountThirty());
             }
           }
+        } else {
+          System.out.println("Sorry that is not a valid coupon!");
         }
+      } else {
+        System.out.println("I dont recognize that response. please try again.");
       }
     }
   }
