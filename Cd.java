@@ -10,4 +10,8 @@ class Cd {
     mRelease = release;
     mPrice = price;
   }
+
+  public boolean releaseYear(int year) {
+    return (year > mRelease);
+  }
 }

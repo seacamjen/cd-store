@@ -14,15 +14,32 @@ public class App {
     allCds.add(cdOne);
     allCds.add(cdTwo);
     allCds.add(cdThree);
+    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date");
+    String userInput = console.readLine();
 
-
-
-    for (Cd individualCd : allCds) {
-      System.out.println("-------------------");
-      System.out.println(individualCd.mName);
-      System.out.println(individualCd.mAlbumName);
-      System.out.println(individualCd.mRelease);
-      System.out.println(individualCd.mPrice);
+    boolean promgramRunning = true;
+    while(promgramRunning){
+      if (userInput.equals("See all Cds")) {
+        for (Cd individualCd : allCds) {
+          System.out.println("-------------------");
+          System.out.println(individualCd.mName);
+          System.out.println(individualCd.mAlbumName);
+          System.out.println(individualCd.mRelease);
+          System.out.println(individualCd.mPrice);
+        }
+      } else if (userInput.equals("Search by Album Date")) {
+          System.out.println("Enter album year to show everything before that year");
+          int userYear = Integer.parseInt(console.readLine());
+          for (Cd individualCd : allCds ) {
+            if (individualCd.releaseYear(userYear)){
+              System.out.println("-------------------");
+              System.out.println(individualCd.mName);
+              System.out.println(individualCd.mAlbumName);
+              System.out.println(individualCd.mRelease);
+              System.out.println(individualCd.mPrice);
+            }
+          }
+      } else if
     }
   }
 }
