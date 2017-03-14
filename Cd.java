@@ -18,4 +18,8 @@ class Cd {
   public boolean priceRange(int price) {
     return (price > mPrice);
   }
+
+  public boolean artistName (String name) {
+    return (name.equals(mName));
+  }
 }

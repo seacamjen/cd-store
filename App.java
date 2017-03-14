@@ -14,7 +14,7 @@ public class App {
     allCds.add(cdOne);
     allCds.add(cdTwo);
     allCds.add(cdThree);
-    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price");
+    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist");
     String userInput = console.readLine();
 
     boolean promgramRunning = true;
@@ -44,6 +44,18 @@ public class App {
         int userPrice = Integer.parseInt(console.readLine());
         for (Cd individualCd : allCds) {
           if (individualCd.priceRange(userPrice)) {
+            System.out.println("-------------------");
+            System.out.println(individualCd.mName);
+            System.out.println(individualCd.mAlbumName);
+            System.out.println(individualCd.mRelease);
+            System.out.println(individualCd.mPrice);
+          }
+        }
+      } else if(userInput.equals("Search by artist")) {
+        System.out.println("Enter artist name you are looking for");
+        String userArtist = console.readLine();
+        for (Cd individualCd : allCds) {
+          if (individualCd.artistName(userArtist)) {
             System.out.println("-------------------");
             System.out.println(individualCd.mName);
             System.out.println(individualCd.mAlbumName);
