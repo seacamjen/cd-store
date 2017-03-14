@@ -22,4 +22,12 @@ class Cd {
   public boolean artistName (String name) {
     return (name.equals(mName));
   }
+
+  public Double discountTen () {
+    Integer newInteger = new Integer(mPrice);
+    Double newDouble = newInteger.doubleValue();
+    return newDouble - (newDouble * .1);
+  }
+
+  
 }

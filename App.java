@@ -14,7 +14,7 @@ public class App {
     allCds.add(cdOne);
     allCds.add(cdTwo);
     allCds.add(cdThree);
-    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist, Add a CD");
+    System.out.println("Welcome! Please select from the options: See all Cds, Search by Album Date, Search by price, Search by artist, Add a CD, Enter coupon, Exit");
     String userInput = console.readLine();
 
     boolean promgramRunning = true;
@@ -80,6 +80,26 @@ public class App {
           System.out.println(userCd.mAlbumName);
           System.out.println(userCd.mRelease);
           System.out.println(userCd.mPrice);
+      } else if (userInput.equals("Exit")) {
+        promgramRunning = false;
+      } else if (userInput.equals("Enter coupon")) {
+        System.out.println("Enter Coupon Code");
+        String userCoupon = console.readLine();
+        if (userCoupon.equals("deal10")) {
+          for (Cd individualCd : allCds) {
+              System.out.println("-------------------");
+              System.out.println(individualCd.mName);
+              System.out.println(individualCd.mAlbumName);
+              System.out.println(individualCd.mRelease);
+              System.out.println("Discounted Price: " + individualCd.discountTen());
+          }
+        } else if (userCoupon.equals("deal20")) {
+
+        } else if (userCoupon.equals("deal30")) {
+
+        } else {
+          // return ("Sorry that coupon is incorrect");
+        }
       }
     }
   }
