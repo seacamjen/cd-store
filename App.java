@@ -94,11 +94,25 @@ public class App {
               System.out.println("Discounted Price: " + individualCd.discountTen());
           }
         } else if (userCoupon.equals("deal20")) {
-
+          if (userCoupon.equals("deal20")) {
+            for (Cd individualCd : allCds) {
+                System.out.println("-------------------");
+                System.out.println(individualCd.mName);
+                System.out.println(individualCd.mAlbumName);
+                System.out.println(individualCd.mRelease);
+                System.out.println("Discounted Price: " + individualCd.discountTwenty());
+            }
+          }
         } else if (userCoupon.equals("deal30")) {
-
-        } else {
-          // return ("Sorry that coupon is incorrect");
+          if (userCoupon.equals("deal30")) {
+            for (Cd individualCd : allCds) {
+                System.out.println("-------------------");
+                System.out.println(individualCd.mName);
+                System.out.println(individualCd.mAlbumName);
+                System.out.println(individualCd.mRelease);
+                System.out.println("Discounted Price: " + individualCd.discountThirty());
+            }
+          }
         }
       }
     }

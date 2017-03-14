@@ -29,5 +29,15 @@ class Cd {
     return newDouble - (newDouble * .1);
   }
 
-  
+  public Double discountTwenty () {
+    Integer newInteger = new Integer(mPrice);
+    Double newDouble = newInteger.doubleValue();
+    return newDouble - (newDouble * .2);
+  }
+
+  public Double discountThirty () {
+    Integer newInteger = new Integer(mPrice);
+    Double newDouble = newInteger.doubleValue();
+    return newDouble - (newDouble * .3);
+  }
 }
